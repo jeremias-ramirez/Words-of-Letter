@@ -16,8 +16,8 @@ import androidx.recyclerview.widget.RecyclerView
  * Adapter for the [RecyclerView] in [DetailActivity].
  */
 class WordAdapter(private val letterId: String, context: Context) :
-    RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
 
+    RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
     private val filteredWords: List<String>
 
     init {
@@ -68,8 +68,9 @@ class WordAdapter(private val letterId: String, context: Context) :
 
         // Set the text of the WordViewHolder
         holder.button.text = item
+
         holder.button.setOnClickListener{
-            val queryUrl : Uri = Uri.parse("${DetailActivity.SEARCH_PREFIX}${item}")
+            val queryUrl : Uri = Uri.parse("${WordListFragment.SEARCH_PREFIX}${item}")
             //ACTION_VIEW es un generico intent que toma un URI.
             // hay mas de este tipo de intent
             //https://developer.android.com/guide/components/intents-common
